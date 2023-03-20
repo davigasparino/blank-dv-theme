@@ -86,6 +86,7 @@ add_action( 'after_setup_theme', 'dv_theme_settings_theme' );
 function dv_theme_load_js(){
     wp_enqueue_script( 'bootstrap-js-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js', array('jquery'), 1, true );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js', array('jquery'), 1, true );
+    wp_enqueue_script( 'theme-scripts-js', get_template_directory_uri().'/assets/js/scripts.js', array(), 1, true );
 }
 add_action( 'wp_footer', 'dv_theme_load_js' );
 
@@ -155,11 +156,39 @@ add_action( 'widgets_init', 'dv_widgets_init');
 function dv_widgets_init() {
 
     register_sidebar( array(
-        'name' => 'Home right sidebar',
-        'id' => 'home-right-1',
+        'name' => 'Listagens',
+        'id' => 'list-widgets',
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="rounded">',
         'after_title' => '</h2>',
     ) );
+
+    register_sidebar( array(
+        'name' => 'Artigos',
+        'id' => 'article-widgets',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="rounded">',
+        'after_title' => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => 'Páginas',
+        'id' => 'page-widgets',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="rounded">',
+        'after_title' => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => 'Posts',
+        'id' => 'posts-widgets',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="rounded">',
+        'after_title' => '</h2>',
+    ) );
+
 }

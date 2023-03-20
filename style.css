@@ -10,7 +10,9 @@ a.custom-logo-link img.custom-logo{
     max-width: 110px;
     height: auto;
 }
-
+.height-400{
+    height: 400px;
+}
 .img-custom-cover{
     object-fit: cover;
     width: 100%;
@@ -28,4 +30,15 @@ a.custom-logo-link img.custom-logo{
 nav .pages.clearfix ul.pagination li.page-item span.page-link a{
     color: #333;
     text-decoration: none;
+}
+a#scroll-to-top-btn {
+    bottom: 40px;
+    right: 40px;
+}
+a#scroll-to-top-btn span{
+    font-size: 50px;
+    transition: ease-in-out .4s;
+}
+a#scroll-to-top-btn span:hover{
+    opacity: 0.7;
 }

@@ -13,7 +13,7 @@
                 <?php endif; ?>
             </div>
             <div class="col-12 col-md-2 bg-light">
-                <?php get_sidebar(); ?>
+                <?php get_sidebar('article'); ?>
             </div>
         </div>
     </div>
