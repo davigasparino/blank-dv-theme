@@ -1,0 +1,31 @@
+/**
+    Theme Name: Blank Dv Theme
+    Theme URI: https://davigasparino.com.br/themes/blank-dv-theme
+    Author: Davi Gasparino
+    Author URI: https://davigasparino.com.br/
+    Description: Theme Default
+    Version: 1.0
+*/
+a.custom-logo-link img.custom-logo{
+    max-width: 110px;
+    height: auto;
+}
+
+.img-custom-cover{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.pagination .next.page-numbers span,
+.pagination .prev.page-numbers span{
+    overflow: hidden;
+    display: block;
+}
+.pages.clearfix .pagination .page-item.active .page-link{
+    background-color: #333;
+    border-color: #333;
+}
+nav .pages.clearfix ul.pagination li.page-item span.page-link a{
+    color: #333;
+    text-decoration: none;
+}
