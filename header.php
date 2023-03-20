@@ -10,4 +10,3 @@
 <?php
 	echo get_bootstrap_menu();
 ?>
-
