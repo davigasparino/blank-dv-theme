@@ -192,3 +192,43 @@ function dv_widgets_init() {
     ) );
 
 }
+
+
+
+function myFileUploader()
+{
+    if (isset($_POST['submit'])) {
+        require_once (ABSPATH . 'wp-admin/includes/image.php');
+        require_once (ABSPATH . 'wp-admin/includes/file.php');
+        require_once (ABSPATH . 'wp-admin/includes/media.php');
+
+        echo '<pre>'.print_r( $_FILES,true).'</pre>';
+        media_handle_upload('fileToUpload', 0);
+        //wp_upload_bits($_FILES['fileToUpload']['name'], null, file_get_contents($_FILES['fileToUpload']['tmp_name']));
+    }
+    echo '
+    <form action="" method="post" enctype="multipart/form-data">
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
+  ';
+}
+
+function myFileUploaderRenderer()
+{
+    ob_start();
+    myFileUploader();
+    return ob_get_clean();
+}
+
+add_shortcode('custom_file_uploader', 'myFileUploaderRenderer');
+
+add_action('wp_ajax_nopriv_custom_landlord_registration_process','custom_landlord_registration_process');
+add_action('wp_ajax_custom_landlord_registration_process','custom_landlord_registration_process');
+function custom_landlord_registration_process(){
+    //$formdata=array();
+    //parse_str($_POST['formdata'],$formdata);
+
+    var_dump('essa é a resposta');
+    die();
+}
