@@ -25,10 +25,10 @@ function dv_get_title_page(){
     return $output;
 }
 
-function get_bootstrap_menu($menu_name = 'header', $args = array()){
+function get_bootstrap_menu(){
     $args_options = array(
-        'echo'              => false,
-        'theme_location'    => $menu_name,
+        'echo'              => true,
+        'theme_location'    => 'header',
         'depth'             => 2,
         'container'         => 'ul',
         'container_class'   => 'collapse navbar-collapse',
@@ -37,43 +37,10 @@ function get_bootstrap_menu($menu_name = 'header', $args = array()){
         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
         'walker'            => new WP_Bootstrap_Navwalker(),
     );
-
-    $var = '
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    ';
-
-    $args_options = array_merge($args_options, $args);
-
-    $logo = get_bloginfo();
-
-    if(!empty(get_custom_logo())){
-        $logo = get_custom_logo();
-    }
-
-    $output = '<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">'.$logo.'</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                '.wp_nav_menu( $args_options ).'
-                '.get_search_form(array('echo' => false)).'
-            </div>
-        </div>
-    </nav>';
-    return $output;
+    return wp_nav_menu( $args_options );
 }
+add_action('dv_blank_navbar_coll', 'get_bootstrap_menu', 1, 1);
+
 function dv_theme_settings_theme(){
     register_nav_menu( 'header', 'Header' );
     register_nav_menu( 'footer', 'Footer' );

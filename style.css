@@ -43,3 +43,7 @@ a#scroll-to-top-btn span{
 a#scroll-to-top-btn span:hover{
     opacity: 1;
 }
+
+.navbar.navbar-expand-lg.bg-body-tertiary.sticky-top{
+    z-index: 9999;
+}
