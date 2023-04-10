@@ -40,6 +40,9 @@ function get_bootstrap_menu(){
     return wp_nav_menu( $args_options );
 }
 add_action('dv_blank_navbar_coll', 'get_bootstrap_menu', 1, 1);
+add_action('dv_blank_navbar_coll', function(){
+    get_search_form();
+}, 1, 1);
 
 function dv_theme_settings_theme(){
     register_nav_menu( 'header', 'Header' );
