@@ -193,12 +193,20 @@ function myFileUploaderRenderer()
 
 add_shortcode('custom_file_uploader', 'myFileUploaderRenderer');
 
-add_action('wp_ajax_nopriv_custom_landlord_registration_process','custom_landlord_registration_process');
-add_action('wp_ajax_custom_landlord_registration_process','custom_landlord_registration_process');
-function custom_landlord_registration_process(){
-    //$formdata=array();
-    //parse_str($_POST['formdata'],$formdata);
+// Disable Gutenberg on the back end.
+add_filter( 'use_block_editor_for_post', '__return_false' );
 
-    var_dump('essa é a resposta');
-    die();
-}
+// Disable Gutenberg for widgets.
+add_filter( 'use_widgets_block_editor', '__return_false' );
+
+add_action( 'wp_enqueue_scripts', function() {
+    // Remove CSS on the front end.
+    wp_dequeue_style( 'wp-block-library' );
+
+    // Remove Gutenberg theme.
+    wp_dequeue_style( 'wp-block-library-theme' );
+
+    // Remove inline global CSS on the front end.
+    wp_dequeue_style( 'global-styles' );
+}, 20 );
+

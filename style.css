@@ -45,5 +45,5 @@ a#scroll-to-top-btn span:hover{
 }
 
 .navbar.navbar-expand-lg.bg-body-tertiary.sticky-top{
-    z-index: 9999;
+    z-index: 999;
 }
