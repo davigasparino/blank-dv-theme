@@ -7,16 +7,11 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-<?php
-$logo = get_bloginfo();
 
-if(!empty(get_custom_logo())){
-    $logo = get_custom_logo();
-}
-?>
+<?php do_action('blank-theme-header-hook'); ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><?php echo $logo; ?></a>
+        <?php do_action('dv_blank_brand_logo'); ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
