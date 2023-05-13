@@ -64,7 +64,8 @@ function dv_theme_load_js(){
 add_action( 'wp_footer', 'dv_theme_load_js' );
 
 function dv_theme_load_css(){
-    wp_enqueue_style( 'google-symbols-css', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined', array() );
+    wp_enqueue_style( 'google-symbols-css', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200', array() );
+    wp_enqueue_style( 'google-symbols-Rounded-css', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,100,1,200', array() );
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/assets/css/bootstrap.min.css', array() );
 }
 add_action( 'wp_enqueue_scripts', 'dv_theme_load_css' );
