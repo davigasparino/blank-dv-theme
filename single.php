@@ -15,9 +15,11 @@
                 <div class="taxonomies pb-5">
                     <?php
                     $taxonomies = get_the_terms(get_the_ID(), 'category');
-                    foreach ($taxonomies as $tax): ?>
-                        <a href="<?php echo esc_url( get_term_link($tax->term_id) ); ?>" class="btn btn-outline-dark btn-sm"><?php echo esc_html($tax->name); ?></a>
-                    <?php endforeach; ?>
+                    if(isset($taxonomies) && is_array($taxonomies)):
+                        foreach ($taxonomies as $tax): ?>
+                            <a href="<?php echo esc_url( get_term_link($tax->term_id) ); ?>" class="btn btn-outline-dark btn-sm"><?php echo esc_html($tax->name); ?></a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
 
                 <?php the_content(); ?>
@@ -25,9 +27,11 @@
                 <div class="tags pt-5 pb-5">
                     <?php
                     $tags = get_the_terms(get_the_ID(), 'post_tag');
-                    foreach ($tags as $tag): ?>
-                        <a href="<?php echo esc_url( get_term_link($tag->term_id) ); ?>" class="btn btn-outline-dark btn-sm"><?php echo esc_html($tag->name); ?></a>
-                    <?php endforeach; ?>
+                    if(isset($tags) && is_array($tags)):
+                        foreach ($tags as $tag): ?>
+                            <a href="<?php echo esc_url( get_term_link($tag->term_id) ); ?>" class="btn btn-outline-dark btn-sm"><?php echo esc_html($tag->name); ?></a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="col-12 col-md-2 bg-light">
