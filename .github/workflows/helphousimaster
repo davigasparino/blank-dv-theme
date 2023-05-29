@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - helphousi_master
-name: 🚀 Deploy website on push
+name: 🚀 Deploy website on push MASTER
 jobs:
   web-deploy:
     name: 🎉 Deploy
