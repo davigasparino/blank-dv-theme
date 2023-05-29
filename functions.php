@@ -214,7 +214,7 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'global-styles' );
 }, 20 );
 
-add_action('dv_blank_brand_logo', 'add_brand_logo', 10, 1);
+add_action( 'dv_blank_brand_logo', 'add_brand_logo', 10, 1 );
 function add_brand_logo(){
     if(!empty(get_custom_logo())):?>
         <a class="navbar-brand" href="/"><?php echo get_custom_logo(); ?></a>
