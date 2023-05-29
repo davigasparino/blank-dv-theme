@@ -217,8 +217,12 @@ add_action( 'wp_enqueue_scripts', function() {
 add_action( 'dv_blank_brand_logo', 'add_brand_logo', 10, 1 );
 function add_brand_logo(){
     if(!empty(get_custom_logo())):?>
-        <a class="navbar-brand" href="/"><?php echo get_custom_logo(); ?></a>
+        <a class="navbar-brand" href="/">
+            <?php echo get_custom_logo(); ?>
+        </a>
     <?php else: ?>
-        <a class="navbar-brand" href="/"><?php echo get_bloginfo(); ?></a>
+        <a class="navbar-brand" href="/">
+            <?php echo get_bloginfo(); ?>
+        </a>
     <?php endif;
 }
