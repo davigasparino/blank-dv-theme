@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 <?php do_action('blank-theme-header-hook'); ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow">
