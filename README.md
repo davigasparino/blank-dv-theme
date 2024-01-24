@@ -1,2 +1,2 @@
 # blank-dv-theme
-Wordpress Blank DV Theme
+Wordpress Blank DV Theme.
